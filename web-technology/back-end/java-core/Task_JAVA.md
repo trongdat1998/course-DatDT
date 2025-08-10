@@ -82,13 +82,15 @@
 - Comment nhiều dòng: 「 /* message comment */ 」
 ### 2.10. Các kiểu dữ liệu trong java ✔
 - Java có 2 loại kiểu dữ liệu: kiểu nguyên thủy và kiểu hướng đối tượng
-	+ Kiểu nguyên thủy: có 8 kiểu nguyên thủy (boolean, byte, char, double, float, int, long, short), kiểu int hoạt động nhanh hơn và chiếm ít bộ nhớ hơn so với Integer
-	+ Kiểu hướng đối tượng: cung cấp thêm các phương thức: toString(), max(), min(),...
+	+ **Kiểu nguyên thủy**: có 8 kiểu nguyên thủy (boolean, byte, char, double, float, int, long, short), kiểu int hoạt động nhanh hơn và chiếm ít bộ nhớ hơn so với Integer
+	+ **Kiểu hướng đối tượng**: cung cấp thêm các phương thức: toString(), max(), min(),...
 ### 2.11. Biến và phạm vi biến trong Java ✔
 - Có 3 kiểu biến:
 	+ **Biến cục bộ**: Được khai báo trong phương thức, chỉ phương thức đó mới sử dụng được
 	+ **Biến toàn cục**: Được khai báo bên trong lớp nhưng ngoài phương thức và không được khai báo là static
 	+ **Biến tĩnh**: Tương tự như biến toàn cục nhưng phải được khai báo là static
+- <span style="color: red;">Các biến được tạo ra khi bắt đầu một phạm vi và bị xóa khi ra khỏi phạm vi của chúng. Như vậy một biến được khai báo
+	trong một khối sẽ mất đi giá trị của nó khi rời khỏi khối đó. Vì vậy thời gian tồn tại của một biến bị giới hạn trong phạm vi của biến đó</span>
 ### 2.12. Hàm - Phương thức trong Java ✔
 - Hàm hay phương thức (method) trong Java là một khối lệnh để thực hiện một hành động cụ thể
 - Nếu 2 method có cùng tên nhưng khác tham số đầu vào thì đó gọi là method overloading
@@ -96,8 +98,8 @@
 - Toán tử số học
 - Toàn tử quan hệ và logic
 - Toán tử tăng giảm
-	+ **Dạng tiền tố (++x, --x)**: Thực hiện tăng giảm trước khi thực hiện logic
-	+ **Dạng hậu tố (x++, x--)**: Thực hiện tăng giảm sau khi thực hiện logic
+	+ **Dạng tiền tố (++x, --x)**: Thực hiện tăng - giảm trước khi thực hiện logic
+	+ **Dạng hậu tố (x++, x--)**: Thực hiện tăng - giảm sau khi thực hiện logic
 - Toán tử gán là một dấu bằng đơn
 	+ Ví du:
 		```java
@@ -115,6 +117,8 @@
 ### 2.15. Chuyển đổi kiểu dữ liệu trong Java ✔
 - Chuyển đổi String thành int: 「 Integer.parseInt() 」
 - Chuyển đổi int thành String: 「 String.valueOf() và Integer.toString() 」
+	+ String.valueOf(): Khi giá trị chuyển đổi là null thì kết quả sau khi chuyển đổi là null
+	+ Object.toString(): Khi giá trị chuyển đổi là null thì kết quả sau khi chuyển đổi sẽ ném ra một ngoại lệ
 - Chuyển đổi String thành Date
 	```java
 	import java.text.SimpleDateFormat;
@@ -129,7 +133,7 @@
 	}
 	```
 	+ Output: 17/07/2017 Mon Jul 17 00:00:00 ICT 2017
-- Toán tử cộng: Được sử dụng để chuyển các kiểu số thành String
+- Toán tử cộng (+): Được sử dụng để chuyển các kiểu số thành String. Thực ra nó đang thực hiện việc nối chuỗi
 ### 2.16. Các hàm toán học trong Java ✔
 - Được sử dụng thông qua lớp Math, lớp này được đặt sẵn trong gói 「 java.lang 」
 	+ Lấy giá trị tuyệt đối: **Math.abs(giá_trị)**
