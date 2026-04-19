@@ -84,23 +84,24 @@
 - Java có 2 loại kiểu dữ liệu: kiểu nguyên thủy và kiểu hướng đối tượng
 	+ **Kiểu nguyên thủy**: có 8 kiểu nguyên thủy (boolean, byte, char, double, float, int, long, short), kiểu int hoạt động nhanh hơn và chiếm ít bộ nhớ hơn so với Integer
 	+ **Kiểu hướng đối tượng**: cung cấp thêm các phương thức: toString(), max(), min(),...
+- Kiểu nguyên thủy không thể lưu được các giá trị là null, còn kiểu hướng đối tượng có thể lưu được giá trị null.
+- Kiểu nguyên thủy được dùng khi bạn quan tâm đển hiệu suất và được dùng trong các trường hợp tính toán
+- Kiểu đối tượng để được dùng để lưu các thuộc tính của đối tượng trong Spring
 ### 2.11. Biến và phạm vi biến trong Java ✔
 - Có 3 kiểu biến:
 	+ **Biến cục bộ**: Được khai báo trong phương thức, chỉ phương thức đó mới sử dụng được
 	+ **Biến toàn cục**: Được khai báo bên trong lớp nhưng ngoài phương thức và không được khai báo là static
 	+ **Biến tĩnh**: Tương tự như biến toàn cục nhưng phải được khai báo là static
-- <span style="color: red;">Các biến được tạo ra khi bắt đầu một phạm vi và bị xóa khi ra khỏi phạm vi của chúng. Như vậy một biến được khai báo
-	trong một khối sẽ mất đi giá trị của nó khi rời khỏi khối đó. Vì vậy thời gian tồn tại của một biến bị giới hạn trong phạm vi của biến đó</span>
+- *Các biến được tạo ra khi bắt đầu một phạm vi và bị xóa khi ra khỏi phạm vi của chúng. Như vậy một biến được khai báo
+	trong một khối sẽ mất đi giá trị của nó khi rời khỏi khối đó. Vì vậy thời gian tồn tại của một biến bị giới hạn trong phạm vi của biến đó*
 ### 2.12. Hàm - Phương thức trong Java ✔
 - Hàm hay phương thức (method) trong Java là một khối lệnh để thực hiện một hành động cụ thể
 - Nếu 2 method có cùng tên nhưng khác tham số đầu vào thì đó gọi là method overloading
 ### 2.13. Các toán tử trong Java ✔
-- Toán tử số học
-- Toàn tử quan hệ và logic
-- Toán tử tăng giảm
-	+ **Dạng tiền tố (++x, --x)**: Thực hiện tăng - giảm trước khi thực hiện logic
-	+ **Dạng hậu tố (x++, x--)**: Thực hiện tăng - giảm sau khi thực hiện logic
-- Toán tử gán là một dấu bằng đơn
+- Toán tử số học: 「 + - * / % 」
+- Toàn tử quan hệ: 「 == != > < >= <= 」
+- Toán tử logic: 「 & | ^ ! 」
+- Toán tử gán: 「 = 」
 	+ Ví du:
 		```java
 		int x, y, z;
@@ -110,10 +111,25 @@
 		x = x + 10; 
 		x += 10;
 		```	
+- Toán tử tăng giảm:
+	+ **Dạng tiền tố (++x, --x)**: Thực hiện tăng - giảm trước khi thực hiện logic
+	+ **Dạng hậu tố (x++, x--)**: Thực hiện tăng - giảm sau khi thực hiện logic
 ### 2.14. Ép kiểu trong Java ✔
 - Có 2 kiểu ép kiểu 
-	+ **Ép kiểu không tường minh**: Là chuyển kiểu dữ liệu có kích thước nhỏ hơn sang kiểu có kích thước lớn hơn. Kiểu biến đổi này không làm mất thông tin.
-	+ **Ép kiểu tường minh**: Là chuyển kiểu dữ liệu có kích thước lớn hơn sang kiểu có kích thước nhỏ hơn. Kiểu biến đổi này có thể làm mất thông tin
+	+ **Ép tự động (implicit casting)**: Là chuyển kiểu dữ liệu có kích thước nhỏ hơn sang kiểu có kích thước lớn hơn. Kiểu biến đổi này không làm mất thông tin.\
+		→ Dùng toán tử gán 「 =  」 để thực hiện
+		```java
+			int a = 9;
+			double b;
+			b = a; // Output: b = 9.0
+		```
+	+ **Ép kiểu tường minh explicit casting**: Là chuyển kiểu dữ liệu có kích thước lớn hơn sang kiểu có kích thước nhỏ hơn. Kiểu biến đổi này có thể làm mất thông tin
+		→ 「 (kiểu-đích) biểu-thức 」 
+		```java
+		double a = 9.9;
+        int b;
+        b = (int) a; // Output: b = 9
+		```
 ### 2.15. Chuyển đổi kiểu dữ liệu trong Java ✔
 - Chuyển đổi String thành int: 「 Integer.parseInt() 」
 - Chuyển đổi int thành String: 「 String.valueOf() và Integer.toString() 」
